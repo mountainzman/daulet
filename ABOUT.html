@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Website</title>
+
+<link rel="stylesheet" href="css/bootstrap.css" />
+<link rel="stylesheet/less" href="css/site.less" />
+<script type="text/javascript" src="scripts/less.min.js"></script>
+<script type="text/javascript" src="scripts/jquery-1.10.2.js" ></script>
+<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<style>
+body {
+    background-image: url("house9.jpeg");
+    width: auto;
+    height: auto;
+    background-size: 100%;
+}
+
+.textone{
+  float: left;
+  width: 900px;
+  margin-left: 20px;
+}
+.textonne{
+  font-size: 22px;
+  font-family: Tahoma;
+}
+.texttwo{
+  float: left;
+  width: 350px;
+  margin-top: 15px;
+  margin-left: 20px;
+}
+.texttwoo{
+  font-size: 15px;
+  font-family: Tahoma;
+}
+.list {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+.list1 {
+  list-style: none;
+  padding: 0px;
+  padding-left: 15px;
+  display: none;
+  color: black;
+  font-size: 15px;
+}
+
+.list1 li:hover {
+  color: #3CB371;
+}
+.title:hover{
+  cursor: pointer;
+  color: #3CB371;
+}
+.dropdown1{
+  width: 170px;
+  float: left;
+  font-family: Tahoma;
+  height: 100px;
+  margin-left: 30px;
+  font-size: 30px;
+  
+}
+.title{
+  margin-bottom: 30px;
+  border-bottom: 3px solid #3CB371;
+  border-right: 3px solid #3CB371;
+}
+</style>
+    
+</head>
+
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="romb.png" style="height: 45px; margin-top:-11px;"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="INDEX.html">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="MYSTORE.html">My Store</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plans<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="MODERN.html">Modern</a></li>
+            <li><a href="RANCH.html">Ranch</a></li>
+            <li><a href="TUDOR.html">Tudor</a></li>
+            <li role="separator" class="divider"></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><p><a href="LOGIN.php" class="btn btn-default" style="margin-top: 10px;">
+          <span class="glyphicon glyphicon-log-in"></span> Log in
+        </a></p></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="dropdown1">
+  <ul class="list">
+    <li class="title">Principals
+      <ul class="list1">
+        <li>William Johnson</li>
+        <li>Douglas Rawn</li>
+        <li>Daniel Cliffton</li>
+      </ul>
+    </li>
+    <li class="title">Clients
+      <ul class="list1">
+        <li>Academic</li>
+        <li>Institutional</li>
+        <li>Private Sector</li>
+        <li>Government</li>
+      </ul>
+    </li>
+    <li class="title">Awards
+      <ul class="list1">
+        <li>National AIA Awards</li>
+        <li>Awards of Distinction</li>
+        <li>Awards by Project</li>
+      </ul>
+    </li>
+    <li class="title">Location
+      <ul class="list1">
+        <li>UK, London, Backer street</li>
+      </ul>
+    </li>
+  </ul>
+  
+  
+  
+  
+</div>
+
+<div class="textone">
+  <span class="textonne">What We Do -
+Quantum is an integrated global design firm that unites a dynamic team of strategists, futurists, researchers, architects, engineers, and industry specialists driven by a singular goal - to help solve our clients and societys greatest challenges. </span>
+</div>
+
+<div class="texttwo">
+  <span class="texttwoo">We believe in design. We mobilize around issues that move us. We place them at the heart of our business, and we have an impact on them even beyond our core expertise. Cities are our medium, and we bring an urban spirit to all of our projects, practices, and initiatives. Armed with data, we understand, celebrate, and protect what makes us inherently human. Serving as advisors, activists, and kindred spirits, we use our work and word to confront pressing global challenges like climate change, social inequity and wellbeing.</span>
+</div>
+
+</body>
+<script type="text/javascript">
+$(document).ready(function() {
+  $('.title').click(function(){
+    var thisCont = $(this).children('.list1');
+    $('.list1').not(thisCont).slideUp(500);
+    thisCont.slideToggle(500);
+  });
+});
+</script>
+</html>
