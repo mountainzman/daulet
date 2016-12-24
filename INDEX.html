@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Website</title>
+
+<link rel="stylesheet" href="css/bootstrap.css" />
+<link rel="stylesheet/less" href="css/site.less" />
+<script type="text/javascript" src="scripts/less.min.js"></script>
+<script type="text/javascript" src="scripts/jquery-1.10.2.js" ></script>
+<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+
+
+</head>
+
+<style type="text/css">
+.fullscreen-bg{
+  position: fixed;
+  overflow: hidden;
+  z-index: -100;
+}
+.fullscreen-bg_video{
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  background-size: cover;
+}
+#slides_control > div{
+  height: 200px;
+  margin-top: 60px;
+}
+#imgslide {
+  margin:auto;
+  width: 700px;
+  height: 400px;
+
+}
+#slides_control {
+  width: 700px;
+  float: left;
+  top:10px;
+ margin-left:20px;
+}
+  </style>
+
+<body>
+
+	<div class="fullscreen-bg">
+	<video autoplay class="fullscreen-bg_video" loop>
+		<source src="Cottage.mp4" type="video/mp4">
+	</video>
+</div>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="romb.png" style="height: 45px; margin-top:-11px;"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="INDEX.html">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="ABOUT.html">About</a></li>
+        <li><a href="MYSTORE.html">My Store</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plans<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="MODERN.html">Modern</a></li>
+            <li><a href="RANCH.html">Ranch</a></li>
+            <li><a href="TUDOR.html">Tudor</a></li>
+            <li role="separator" class="divider"></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><p><a href="LOGIN.php" class="btn btn-default" style="margin-top: 10px;">
+          <span class="glyphicon glyphicon-log-in"></span> Log in
+        </a></p></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+<div ng-app="app" style="float:left;">
+  <div ng-controller="CarouselDemoCtrl" id="slides_control">
+    <div>
+      <carousel interval="myInterval">
+        <slide ng-repeat="slide in slides" active="slide.active">
+          <img ng-src="{{slide.image}}" id="imgslide">
+          <div class="carousel-caption">
+            <h4></h4>
+          </div>
+        </slide>
+      </carousel>
+    </div>
+  </div>
+</div>  
+<div class="square2" style="float:left; margin-left:50px; margin-top:-10px;"><img src="house14.jpeg" style="width:450px; height:250px;">
+</div>
+<div class="square3" style="float:left; margin-left:50px; margin-top:10px;"><img src="house2.jpeg" style="width:450px; height:250px;">
+</div>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
+
+</body>
+<script type="text/javascript">
+angular.module('app', ['ui.bootstrap']);
+function CarouselDemoCtrl($scope){
+  $scope.myInterval = 4000;
+  $scope.slides = [
+    {
+      image: 'house7.jpeg'
+    },
+    {
+      image: 'house18.jpeg'
+    },
+    {
+      image: 'house19.jpg'
+    },
+    {
+      image: 'house17.jpeg'
+    }
+  ];
+};
+
+</script>
+</html>

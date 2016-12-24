@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Website</title>
+
+<link rel="stylesheet" href="css/bootstrap.css" />
+<link rel="stylesheet/less" href="css.less">
+<link rel="stylesheet/less" href="css/site.less" />
+<script type="text/javascript" src="scripts/less.min.js"></script>
+<script type="text/javascript" src="scripts/jquery-1.10.2.js" ></script>
+<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<style>
+body {
+    background-image: url("house11.jpg");
+    width: auto;
+    height: auto;
+    background-size: 100%;
+}
+.list {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  color: white;
+}
+.list1 {
+  list-style: none;
+  padding: 0px;
+  padding-left: 15px;
+  display: none;
+  color: white;
+  font-size: 15px;
+}
+
+.list1 li:hover {
+  color: #FF8247;
+}
+.title:hover{
+  cursor: pointer;
+  color: #FF8247;
+}
+.dropdown1{
+  width: 170px;
+  float: left;
+  font-family: Tahoma;
+  height: 300px;
+  margin-left: 30px;
+  font-size: 30px;
+  
+}
+.title{
+  margin-bottom: 30px;
+  border-bottom: 3px solid #FF8247;
+  border-right: 3px solid #FF8247;
+}
+</style>
+    
+</head>
+
+<body ng-app="app" ng-controller="controller">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="romb.png" style="height: 45px; margin-top:-11px;"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="INDEX.html">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="ABOUT.html">About</a></li>
+        <li><a href="MYSTORE.html">My Store</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plans<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="MODERN.html">Modern</a></li>
+            <li><a href="RANCH.html">Ranch</a></li>
+            <li><a href="TUDOR.html">Tudor</a></li>
+            <li role="separator" class="divider"></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input ng-change="search_house()" ng-model="search_text" type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><p><a href="LOGIN.php" class="btn btn-default" style="margin-top: 10px;">
+          <span class="glyphicon glyphicon-log-in"></span> Log in
+        </a></p></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="dropdown1" style="height:500px;">
+  <ul class="list">
+    <li class="title">Gallery
+      <ul class="list1">
+        <li>Front Images</li>
+        <li>Side Images</li>
+        <li>Profile Images</li>
+      </ul>
+    </li>
+    <li class="title">Materlials for Exterior
+      <ul class="list1">
+        <li>Decoration</li>
+        <li>Swimming Pool</li>
+        <li>Landscape</li>
+      </ul>
+    </li>
+    <li class="title">Materials for Interior
+      <ul class="list1">
+        <li>Plumbing</li>
+        <li>Water Purification</li>
+        <li>Furniture</li>
+      </ul>
+    </li>
+    <li class="title">Location
+      <ul class="list1">
+        <li>UK, London, Backer street</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<div class="textmodern">
+  <span class="modern">Modern - House Plans feature open, flexible floor space, minimalist decorative elements, and extensive use of modern or "industrial" mixed materials throughout the home. Stripped down, sleek, and elegant Contemporary or Modern house plans are a complete departure from traditional architecture and have been a favorite style in architect-designed homes since the 1950s. Found in manicured suburban neighborhoods across the country.</span>
+</div>
+<ul>
+  <li ng-repeat="i in houses1 " style="height:160px;">
+<div class="purchase1">
+  <img ng-src="{{i.image}}" class="modernhouse1">
+  <span class="houseinf1">{{i.textt}}</span>
+  <p class="price1" style="color:white; float:left; margin-left:10px; font-size: 18px; margin-top:10px;">{{i.price}}</p>
+  <button ng-click="purchase($index)" type="button" class="btn btn-success" style="float: right;margin-right:10px; margin-top:10px; background-color:#FF8247">Purchase</button>
+</div>
+</li>
+</ul>
+
+</body>
+<script type="text/javascript">
+$(document).ready(function() {
+  $('.title').click(function(){
+    var thisCont = $(this).children('.list1');
+    $('.list1').not(thisCont).slideUp(500);
+    thisCont.slideToggle(500);
+  });
+});
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+<script type="text/javascript">
+var validationApp = angular.module('app', []);
+
+    validationApp.controller('controller', function($scope) {
+
+      $scope.houses = JSON.parse(localStorage.getItem("houses"));
+      $scope.houses1 = $scope.houses;
+      $scope.search_house = function(){
+        $scope.houses1=[];
+        for (var i=0;i<$scope.houses.length; i++){
+          
+          if ($scope.houses[i].textt.toLowerCase().indexOf($scope.search_text.toLowerCase())!=-1){
+            $scope.houses1.push($scope.houses[i]);
+          }
+          
+
+        }
+        if ($scope.search_text=="") {
+            $scope.houses1 = $scope.houses;
+          }
+      };
+      $scope.purchase = function(index){
+        var list = JSON.parse(localStorage.getItem("basket"));
+        list.push($scope.houses[index]);
+        localStorage.setItem("basket",JSON.stringify(list));
+      }
+
+});
+</script>
+</html>
